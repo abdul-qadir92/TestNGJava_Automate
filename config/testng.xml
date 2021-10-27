@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Search" thread-count="3" parallel="tests">
+    <test name="AmazonTestEnv1">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env1"/>
+        <classes>
+            <class name="TestCase.SearchiPhone"/>
+        </classes>
+    </test>
+    <test name="AmazonTestEnv2">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env2"/>
+        <classes>
+            <class name="TestCase.SearchiPhone"/>
+        </classes>
+    </test>
+    <test name="AmazonTestEnv3">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env3"/>
+        <classes>
+            <class name="TestCase.SearchiPhone"/>
+        </classes>
+    </test>
+</suite>

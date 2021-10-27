@@ -1,9 +1,9 @@
 {
   "server": "hub-cloud.browserstack.com",
-  "user": "abdulqadirkhande_5QjKSy",
-  "key": "vePUAny3y5yaMQ2xNBtf",
+  "user": "",
+  "key": "",
   "capabilities": {
-    "build": "browserstack-build-1",
+    "build": "aq-browserstack-build-2M",
     "name": "parallel_test",
     "browserstack.debug": true
   },

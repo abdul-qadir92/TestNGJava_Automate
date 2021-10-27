@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Amazon {
     WebDriver driver ;
@@ -13,7 +14,7 @@ public class Amazon {
 
     public Amazon(WebDriver Ldriver){
         this.driver = Ldriver;
-        wait = new WebDriverWait(driver,60);
+        wait = new WebDriverWait(driver,30);
     }
 
     @FindBy (id="twotabsearchtextbox")
@@ -28,6 +29,10 @@ public class Amazon {
     WebElement chkiOS;
 
     public void launchAmzn() {
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.get("https://www.amazon.com");
         wait.until(ExpectedConditions.elementToBeClickable(txtSearch));
         txtSearch.sendKeys("iPhone X");
         btnSearch.click();
@@ -41,7 +46,7 @@ public class Amazon {
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Price: High to Low')]")));
         //driver.findElement(By.xpath("//a[contains(text(),'Price: High to Low')]")).click();
         wait.until(ExpectedConditions.elementToBeClickable(chkiOS));
-        js.executeScript("window.scrollBy(0,500)");
+        js.executeScript("arguments[0].scrollIntoView;",chkiOS);
         //Actions action = new Actions(driver);
         //action.click(driver.findElement(By.xpath("//span[text()='iOS']"))).build().perform();
         //js.executeScript("arguments[0].scrollIntoView()",driver.findElement(By.xpath("//span[text()='iOS']")));
