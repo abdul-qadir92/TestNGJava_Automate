@@ -25,7 +25,7 @@ public class Amazon {
     WebElement btnSort;
     @FindBy (xpath = "//a[contains(text(),'Price: High to Low')]")
     WebElement lblHigh2Low;
-    @FindBy (xpath = "//span[text()='iOS']")
+    @FindBy (xpath = "//span[text()='iOS']/preceding-sibling::div/label")
     WebElement chkiOS;
 
     public void launchAmzn() {

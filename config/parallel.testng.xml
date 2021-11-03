@@ -22,4 +22,11 @@
             <class name="TestCase.SearchiPhone"/>
         </classes>
     </test>
+    <test name="AmazonTestEnv4">
+        <parameter name="config" value="parallel.conf.json"/>
+        <parameter name="environment" value="env4"/>
+        <classes>
+            <class name="TestCase.SearchiPhone"/>
+        </classes>
+    </test>
 </suite>

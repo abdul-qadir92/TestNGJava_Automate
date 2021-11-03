@@ -1,0 +1,19 @@
+
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "",
+  "key": "",
+
+  "capabilities": {
+    "project": "Amazon_Product_Search",
+    "build": "local_1.0",
+    "name": "Bstack-[TestNG] Local Test",
+    "browserstack.local": true
+  },
+
+  "environments": {
+    "chrome": {
+      "browser": "chrome"
+    }
+  }
+}

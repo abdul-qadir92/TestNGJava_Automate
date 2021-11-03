@@ -3,8 +3,9 @@
   "user": "",
   "key": "",
   "capabilities": {
-    "build": "aq-browserstack-build-2M",
-    "name": "parallel_test",
+    "project": "Amazon Product Search",
+    "build": "BS 1.0",
+    "name": "Product Search",
     "browserstack.debug": true
   },
   "environments": {
@@ -25,6 +26,12 @@
       "browser_version": "latest",
       "os": "OS X",
       "os_version": "Big Sur"
+    },
+    "env4": {
+      "browser": "edge",
+      "browser_version": "latest",
+      "os": "Windows",
+      "os_version": "10"
     }
   }
 }
