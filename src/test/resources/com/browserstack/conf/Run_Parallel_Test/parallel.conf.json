@@ -1,0 +1,29 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "",
+  "key": "",
+  "capabilities": {
+    "project": "Amazon Product Search",
+    "build": "BS 4.0",
+    "name": "Product Search",
+    "browserstack.debug": true
+  },
+  "environments": {
+    "env1": {
+      "os_version": "8.1",
+      "device": "Samsung Galaxy Tab S4",
+      "realMobile": "true"
+    },
+    "env2": {
+      "browser": "firefox",
+      "browser_version": "latest",
+      "os": "OS X",
+      "os_version": "Big Sur"
+    },
+    "env3": {
+      "os_version": "11.0",
+      "device": "Google Pixel 5",
+      "realMobile": "true"
+    }
+  }
+}
