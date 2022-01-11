@@ -1,24 +1,21 @@
-package Helper;
+package Setup;
 
 import com.browserstack.local.Local;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.*;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
+import utils.BrowserstackTestStatusListener;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -26,8 +23,9 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+@Listeners(BrowserstackTestStatusListener.class)
 public class DriverClass {
-    public WebDriver driver;
+    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     public Properties config;
     BufferedReader reader;
     private Local l;
@@ -35,26 +33,9 @@ public class DriverClass {
     // instant launch browser
     @Parameters(value = { "config", "environment" })
     @BeforeMethod()
-    public void launch(String config_file, String environment) throws Exception {
-        /*if(browser.contains("Chrome")){
-            //For Chrome Browser
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        }else if(browser.contains("Firefox")){
-            //For Firefox Browser
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }else if(browser.contains("Safari")){
-            //For Safari Browser
-            WebDriverManager.safaridriver().setup();
-            driver = new SafariDriver();
-        }
-        WebDriverWait wait = new WebDriverWait(driver,5);
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);*/
+    public WebDriver init_driver(String config_file, String environment) throws Exception {
         JSONParser parser = new JSONParser();
-        JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
+        JSONObject config = (JSONObject) parser.parse(new FileReader("src/test/resources/com/browserstack/conf/" + config_file));
         JSONObject envs = (JSONObject) config.get("environments");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -75,6 +56,10 @@ public class DriverClass {
             }
         }
 
+        if(System.getenv("BROWSERSTACK_BUILD_NAME")!=null){
+            capabilities.setCapability("build",System.getenv("BROWSERSTACK_BUILD_NAME").toString());
+        }
+
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {
             username = (String) config.get("user");
@@ -93,14 +78,37 @@ public class DriverClass {
             l.start(options);
         }
 
-        driver = new RemoteWebDriver(
-                new URL("http://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities);
+        //region optionalCapabilities
+        if(capabilities.getCapability("realMobile")!=null
+                && !capabilities.getCapability("realMobile").toString().toLowerCase().matches(".*(tab|pad).*")){
+            String UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36";
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--user-agent="+UserAgent);
+            capabilities.setCapability(ChromeOptions.CAPABILITY,options);
+            //capabilities.merge(options);
+        }
+        //endregion
+
+        tlDriver.set( new RemoteWebDriver(
+                new URL("http://" + username + ":" + accessKey + "@" + config.get("server") + "/wd/hub"), capabilities));
+
+        //region WindowCustomize
+        getDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        if(capabilities.getCapability("realMobile")==null)
+            getDriver().manage().window().maximize();
+        //endregion
+        return getDriver();
+    }
+
+    public static synchronized WebDriver getDriver(){
+        return tlDriver.get();
     }
 
     @AfterMethod
-    public void tearDown(){
-        driver.quit();
-
+    public void tearDown(ITestResult result) throws Exception {
+        if (getDriver() != null) {
+            getDriver().quit();
+        }
+        if(l != null) l.stop();
     }
-
 }
