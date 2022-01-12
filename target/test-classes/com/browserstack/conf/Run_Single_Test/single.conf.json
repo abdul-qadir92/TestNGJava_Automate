@@ -1,0 +1,24 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "abdulqadirkhande_5QjKSy",
+  "key": "vePUAny3y5yaMQ2xNBtf",
+
+  "capabilities": {
+    "project": "Selenium Test",
+    "build": "TestNGJava_Demo",
+    "name": "Single_Test",
+    "browserstack.debug": "true",
+    "browserstack.networkLogs": "true",
+    "browserstack.selenium_version": "3.14.0",
+    "browserstack.console":"errors"
+  },
+
+  "environments": {
+    "env": {
+      "browser": "Edge",
+      "browser_version": "latest",
+      "os": "Windows",
+      "os_version": "11"
+    }
+  }
+}
