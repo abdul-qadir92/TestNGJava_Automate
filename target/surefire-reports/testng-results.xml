@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="48935" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:40:00 IST">
+    <groups>
+    </groups>
+    <test name="LocalTesT" duration-ms="48935" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:40:00 IST">
+      <class name="TestCase.LocalTest">
+        <test-method status="PASS" signature="init_driver(java.lang.String,java.lang.String)[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="init_driver" is-config="true" duration-ms="22238" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:39:34 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Run_Local_Test/local.conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[env]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init_driver -->
+        <test-method status="PASS" signature="test()[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="test" duration-ms="19914" started-at="2021-12-16T21:39:34 IST" finished-at="2021-12-16T21:39:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="tearDown" is-config="true" duration-ms="5847" started-at="2021-12-16T21:39:55 IST" finished-at="2021-12-16T21:40:00 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test status=SUCCESS method=LocalTest.test()[pri:0, instance:TestCase.LocalTest@7f13d6e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCase.LocalTest -->
+    </test> <!-- LocalTesT -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
