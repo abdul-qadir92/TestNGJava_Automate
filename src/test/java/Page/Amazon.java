@@ -42,9 +42,9 @@ public class Amazon {
         wait.until(ExpectedConditions.elementToBeClickable(btnSort));
         btnSort.click();
         js.executeScript("arguments[0].click();",lblHigh2Low);
-        wait.until(ExpectedConditions.elementToBeClickable(chkiOS));
+        /*wait.until(ExpectedConditions.elementToBeClickable(chkiOS));
         js.executeScript("arguments[0].scrollIntoView;",chkiOS);
-        chkiOS.click();
+        chkiOS.click();*/
         List<WebElement> alliPhone;
         alliPhone = driver.findElements(By.xpath("//a/span[contains(text(),'iPhone X')]"));
         //System.out.println(alliPhone.size());

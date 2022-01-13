@@ -1,44 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="All Test Suite" duration-ms="48935" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:40:00 IST">
+  <suite name="Parallel Search" duration-ms="47894" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:32 IST">
     <groups>
     </groups>
-    <test name="LocalTesT" duration-ms="48935" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:40:00 IST">
-      <class name="TestCase.LocalTest">
-        <test-method status="PASS" signature="init_driver(java.lang.String,java.lang.String)[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="init_driver" is-config="true" duration-ms="22238" started-at="2021-12-16T21:39:12 IST" finished-at="2021-12-16T21:39:34 IST">
+    <test name="AmazonTestEnv3" duration-ms="34489" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:19 IST">
+      <class name="TestCase.SearchiPhone">
+        <test-method status="PASS" signature="init_driver(java.lang.String,java.lang.String)[pri:0, instance:TestCase.SearchiPhone@32d2fa64]" name="init_driver" is-config="true" duration-ms="13708" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:58:58 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Run_Local_Test/local.conf.json]]>
+                <![CDATA[Run_Parallel_Test/parallel.conf.json]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[env]]>
+                <![CDATA[env3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init_driver -->
-        <test-method status="PASS" signature="test()[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="test" duration-ms="19914" started-at="2021-12-16T21:39:34 IST" finished-at="2021-12-16T21:39:54 IST">
+        <test-method status="PASS" signature="SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@32d2fa64]" name="SearchiPhoneX" duration-ms="16973" started-at="2022-01-12T16:58:58 IST" finished-at="2022-01-12T16:59:15 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCase.LocalTest@7f13d6e]" name="tearDown" is-config="true" duration-ms="5847" started-at="2021-12-16T21:39:55 IST" finished-at="2021-12-16T21:40:00 IST">
+        </test-method> <!-- SearchiPhoneX -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCase.SearchiPhone@32d2fa64]" name="tearDown" is-config="true" duration-ms="1639" started-at="2022-01-12T16:59:17 IST" finished-at="2022-01-12T16:59:19 IST">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test status=SUCCESS method=LocalTest.test()[pri:0, instance:TestCase.LocalTest@7f13d6e] output={null}]]]>
+                <![CDATA[[TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@32d2fa64] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- TestCase.LocalTest -->
-    </test> <!-- LocalTesT -->
-  </suite> <!-- All Test Suite -->
+      </class> <!-- TestCase.SearchiPhone -->
+    </test> <!-- AmazonTestEnv3 -->
+    <test name="AmazonTestEnv2" duration-ms="47613" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:32 IST">
+      <class name="TestCase.SearchiPhone">
+        <test-method status="PASS" signature="init_driver(java.lang.String,java.lang.String)[pri:0, instance:TestCase.SearchiPhone@fad74ee]" name="init_driver" is-config="true" duration-ms="21968" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:07 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Run_Parallel_Test/parallel.conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[env2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init_driver -->
+        <test-method status="PASS" signature="SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@fad74ee]" name="SearchiPhoneX" duration-ms="21638" started-at="2022-01-12T16:59:07 IST" finished-at="2022-01-12T16:59:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchiPhoneX -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCase.SearchiPhone@fad74ee]" name="tearDown" is-config="true" duration-ms="2630" started-at="2022-01-12T16:59:30 IST" finished-at="2022-01-12T16:59:32 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@fad74ee] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCase.SearchiPhone -->
+    </test> <!-- AmazonTestEnv2 -->
+    <test name="AmazonTestEnv1" duration-ms="47894" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:32 IST">
+      <class name="TestCase.SearchiPhone">
+        <test-method status="PASS" signature="init_driver(java.lang.String,java.lang.String)[pri:0, instance:TestCase.SearchiPhone@7f13d6e]" name="init_driver" is-config="true" duration-ms="17503" started-at="2022-01-12T16:58:45 IST" finished-at="2022-01-12T16:59:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Run_Parallel_Test/parallel.conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[env1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init_driver -->
+        <test-method status="PASS" signature="SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@7f13d6e]" name="SearchiPhoneX" duration-ms="27071" started-at="2022-01-12T16:59:02 IST" finished-at="2022-01-12T16:59:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchiPhoneX -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestCase.SearchiPhone@7f13d6e]" name="tearDown" is-config="true" duration-ms="1614" started-at="2022-01-12T16:59:31 IST" finished-at="2022-01-12T16:59:32 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:TestCase.SearchiPhone@7f13d6e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCase.SearchiPhone -->
+    </test> <!-- AmazonTestEnv1 -->
+  </suite> <!-- Parallel Search -->
 </testng-results>

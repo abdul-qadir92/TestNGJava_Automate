@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [All Test Suite]">
-  <test thread-count="5" verbose="0" name="LocalTesT(failed)">
-    <parameter name="environment" value="env"/>
-    <parameter name="config" value="Run_Local_Test/local.conf.json"/>
+<suite thread-count="3" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Parallel Search]" parallel="tests">
+  <test thread-count="3" verbose="0" name="AmazonTestEnv2(failed)" parallel="tests">
+    <parameter name="environment" value="env2"/>
+    <parameter name="config" value="Run_Parallel_Test/parallel.conf.json"/>
     <classes>
-      <class name="TestCase.LocalTest">
+      <class name="TestCase.SearchiPhone">
         <methods>
-          <include name="launch"/>
+          <include name="init_driver"/>
           <include name="tearDown"/>
-          <include name="test"/>
+          <include name="SearchiPhoneX"/>
         </methods>
-      </class> <!-- TestCase.LocalTest -->
+      </class> <!-- TestCase.SearchiPhone -->
     </classes>
-  </test> <!-- LocalTesT(failed) -->
-</suite> <!-- Failed suite [All Test Suite] -->
+  </test> <!-- AmazonTestEnv2(failed) -->
+  <test thread-count="3" verbose="0" name="AmazonTestEnv3(failed)" parallel="tests">
+    <parameter name="environment" value="env3"/>
+    <parameter name="config" value="Run_Parallel_Test/parallel.conf.json"/>
+    <classes>
+      <class name="TestCase.SearchiPhone">
+        <methods>
+          <include name="init_driver"/>
+          <include name="tearDown"/>
+          <include name="SearchiPhoneX"/>
+        </methods>
+      </class> <!-- TestCase.SearchiPhone -->
+    </classes>
+  </test> <!-- AmazonTestEnv3(failed) -->
+  <test thread-count="3" verbose="0" name="AmazonTestEnv1(failed)" parallel="tests">
+    <parameter name="environment" value="env1"/>
+    <parameter name="config" value="Run_Parallel_Test/parallel.conf.json"/>
+    <classes>
+      <class name="TestCase.SearchiPhone">
+        <methods>
+          <include name="init_driver"/>
+          <include name="tearDown"/>
+          <include name="SearchiPhoneX"/>
+        </methods>
+      </class> <!-- TestCase.SearchiPhone -->
+    </classes>
+  </test> <!-- AmazonTestEnv1(failed) -->
+</suite> <!-- Failed suite [Parallel Search] -->

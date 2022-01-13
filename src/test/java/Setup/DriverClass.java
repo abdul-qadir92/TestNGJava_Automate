@@ -55,11 +55,12 @@ public class DriverClass {
                 capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
             }
         }
-
+        System.out.println("BROWSERSTACK_BUILD_NAME: "+System.getenv("BROWSERSTACK_BUILD_NAME"));
         if(System.getenv("BROWSERSTACK_BUILD_NAME")!=null){
-            capabilities.setCapability("build",System.getenv("BROWSERSTACK_BUILD_NAME").toString());
+            System.out.println("I am inside logic!");
+            capabilities.setCapability("build", System.getenv("BROWSERSTACK_BUILD_NAME"));
         }
-
+        System.out.println("build name is: "+capabilities.getCapability("build"));
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {
             username = (String) config.get("user");
