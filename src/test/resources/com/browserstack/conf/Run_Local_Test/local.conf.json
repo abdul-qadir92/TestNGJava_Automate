@@ -18,7 +18,7 @@
   "environments": {
     "env": {
       "os": "Windows",
-      "osVersion": "10.0",
+      "os_version": "10",
       "browser": "Chrome",
       "browser_version": "latest"
   }
