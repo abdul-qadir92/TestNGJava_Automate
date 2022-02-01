@@ -14,30 +14,4 @@
       </class> <!-- TestCase.SearchiPhone -->
     </classes>
   </test> <!-- AmazonTestEnv2(failed) -->
-  <test thread-count="3" verbose="0" name="AmazonTestEnv3(failed)" parallel="tests">
-    <parameter name="environment" value="env3"/>
-    <parameter name="config" value="Run_Parallel_Test/parallel.conf.json"/>
-    <classes>
-      <class name="TestCase.SearchiPhone">
-        <methods>
-          <include name="init_driver"/>
-          <include name="tearDown"/>
-          <include name="SearchiPhoneX"/>
-        </methods>
-      </class> <!-- TestCase.SearchiPhone -->
-    </classes>
-  </test> <!-- AmazonTestEnv3(failed) -->
-  <test thread-count="3" verbose="0" name="AmazonTestEnv1(failed)" parallel="tests">
-    <parameter name="environment" value="env1"/>
-    <parameter name="config" value="Run_Parallel_Test/parallel.conf.json"/>
-    <classes>
-      <class name="TestCase.SearchiPhone">
-        <methods>
-          <include name="init_driver"/>
-          <include name="tearDown"/>
-          <include name="SearchiPhoneX"/>
-        </methods>
-      </class> <!-- TestCase.SearchiPhone -->
-    </classes>
-  </test> <!-- AmazonTestEnv1(failed) -->
 </suite> <!-- Failed suite [Parallel Search] -->

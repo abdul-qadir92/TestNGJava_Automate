@@ -1,13 +1,13 @@
 
 {
   "server": "hub-cloud.browserstack.com",
-  "user": "",
-  "key": "",
+  "user": "abdulqadirkhande_5QjKSy",
+  "key": "vePUAny3y5yaMQ2xNBtf",
 
   "capabilities": {
     "project": "Amazon Test",
-    "build": "Local_BS",
-    "name": "Single_Test",
+    "build": "Automate_Demo",
+    "name": "Local_Test",
     "browserstack.debug": "true",
     "browserstack.networkLogs": "true",
     "browserstack.selenium_version": "3.14.0",
@@ -17,10 +17,10 @@
 
   "environments": {
     "env": {
-      "browser": "Chrome",
-      "browser_version": "latest",
       "os": "Windows",
-      "os_version": "10"
+      "osVersion": "10.0",
+      "browser": "Chrome",
+      "browser_version": "latest"
   }
 }
 }

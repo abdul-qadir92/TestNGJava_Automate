@@ -1,4 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.673 s - in TestSuite
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 41.089 s <<< FAILURE! - in TestSuite
+TestCase.SearchiPhone.SearchiPhoneX  Time elapsed: 8.964 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.id: twotabsearchtextbox' (tried for 10 second(s) with 500 milliseconds interval)
+	at TestCase.SearchiPhone.SearchiPhoneX(SearchiPhone.java:12)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Abduls-MacBook-Pro.local', ip: 'fe80:0:0:0:18d3:f6bc:9b75:6a9b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_311'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: false, acceptSslCerts: false, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browser_name: chrome, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: jenkins-TestNG_ParallelTest..., databaseEnabled: false, detected_language: selenium/3.141.59 (java mac), device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, projectName: Amazon Product Search, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: Parallel Test, takesScreenshot: true, udid: 00008101-001E79E422E0001E, useXctestrunFile: true, version: , wda_port: 8405, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 58620f688286b422d268eff4a8c98fcd6c69c5d3
+*** Element info: {Using=id, value=twotabsearchtextbox}
+	at TestCase.SearchiPhone.SearchiPhoneX(SearchiPhone.java:12)
+

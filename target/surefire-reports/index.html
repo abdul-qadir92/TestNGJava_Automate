@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Parallel_Search">
-              <span class="suite-name border-passed">Parallel Search</span>
+              <span class="suite-name border-failed">Parallel Search</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Parallel_Search" class="hide-methods failed suite-Parallel_Search"> (hide)</a> <!-- hide-methods failed suite-Parallel_Search -->
+                      <a href="#" panel-name="suite-Parallel_Search" class="show-methods failed suite-Parallel_Search"> (show)</a> <!-- show-methods failed suite-Parallel_Search -->
+                    </span>
+                    <div class="method-list-content failed suite-Parallel_Search">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_Search" title="TestCase.SearchiPhone" hash-for-method="SearchiPhoneX">SearchiPhoneX</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Parallel_Search -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,11 +116,6 @@
                       <a href="#" panel-name="suite-Parallel_Search" class="show-methods passed suite-Parallel_Search"> (show)</a> <!-- show-methods passed suite-Parallel_Search -->
                     </span>
                     <div class="method-list-content passed suite-Parallel_Search">
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Parallel_Search" title="TestCase.SearchiPhone" hash-for-method="SearchiPhoneX">SearchiPhoneX</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Parallel_Search" title="TestCase.SearchiPhone" hash-for-method="SearchiPhoneX">SearchiPhoneX</a> <!-- method navigator-link -->
@@ -129,9 +138,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Parallel_Search" class="panel Parallel_Search">
-          <div class="suite-Parallel_Search-class-passed">
+          <div class="suite-Parallel_Search-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">TestCase.SearchiPhone</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -140,8 +149,59 @@
                   <a name="SearchiPhoneX">
                   </a> <!-- SearchiPhoneX -->
                   <span class="method-name">SearchiPhoneX</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.id: twotabsearchtextbox&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Page.Amazon.launchAmzn(Amazon.java:39)
+	at TestCase.SearchiPhone.SearchiPhoneX(SearchiPhone.java:12)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Abduls-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:18d3:f6bc:9b75:6a9b%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;1.8.0_311&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {64bit: false, acceptSslCert: false, acceptSslCerts: false, automationName: XCUITest, bootstrapPath: /usr/local/.browserstack/co..., browser: iphone, browserName: safari, browser_name: chrome, browserstack.appium_version: 1.17.0, browserstack.isTargetBased: true, browserstack.is_hub_canary: false, buildName: jenkins-TestNG_ParallelTest..., databaseEnabled: false, detected_language: selenium/3.141.59 (java mac), device: iphone, deviceName: iPhone 12, deviceOrientation: PORTRAIT, javascriptEnabled: true, locationContextEnabled: false, mobile: {browser: mobile, version: iPhone 12-14.1}, networkConnectionEnabled: false, newCommandTimeout: 0, new_bucketing: true, noReset: true, orientation: PORTRAIT, orig_os: ios, osVersion: 14, os_version: 14.0, platform: MAC, platformName: MAC, projectName: Amazon Product Search, realMobile: true, real_mobile: true, safariIgnoreFraudWarning: true, safariInitialUrl: http://mobile-internet-chec..., sessionName: Parallel Test, takesScreenshot: true, udid: 00008101-001E79E422E0001E, useXctestrunFile: true, version: , wda_port: 8405, webStorageEnabled: false, webkitResponseTimeout: 20000}
+Session ID: 58620f688286b422d268eff4a8c98fcd6c69c5d3
+*** Element info: {Using=id, value=twotabsearchtextbox}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy9.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 25 more
+... Removed 22 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Parallel_Search-class-failed -->
+          <div class="suite-Parallel_Search-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCase.SearchiPhone</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="SearchiPhoneX">
@@ -236,20 +296,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'SearchiPhoneX')
 data.setCell(0, 2, 'TestCase.SearchiPhone')
-data.setCell(0, 3, 27071);
+data.setCell(0, 3, 22840);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'SearchiPhoneX')
 data.setCell(1, 2, 'TestCase.SearchiPhone')
-data.setCell(1, 3, 21638);
+data.setCell(1, 3, 22132);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'SearchiPhoneX')
 data.setCell(2, 2, 'TestCase.SearchiPhone')
-data.setCell(2, 3, 16973);
+data.setCell(2, 3, 13358);
 window.suiteTableData['Parallel_Search']= { tableData: data, tableDiv: 'times-div-Parallel_Search'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 47 seconds</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Parallel_Search">
               </div> <!-- times-div-Parallel_Search -->
             </div> <!-- times-div -->
@@ -277,40 +337,42 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestCase.SearchiPhone</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env3)</span>
+                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env1)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env1)</span>
-                <span class="method-start">1 ms</span>
+                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env2)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env2)</span>
-                <span class="method-start">1 ms</span>
+                <span class="method-name">init_driver(Run_Parallel_Test/parallel.conf.json, env3)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">SearchiPhoneX</span>
-                <span class="method-start">13710 ms</span>
+                <span class="method-start">9637 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SearchiPhoneX</span>
-                <span class="method-start">17505 ms</span>
+                <span class="method-start">13410 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">SearchiPhoneX</span>
-                <span class="method-start">21970 ms</span>
+                <span class="method-start">15020 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:Te...)</span>
-                <span class="method-start">32747 ms</span>
+                <span class="method-name">tearDown([TestResult name=SearchiPhoneX status=FAILURE method=SearchiPhone.SearchiPhoneX()[pri:0, instance:Te...)</span>
+                <span class="method-start">23908 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:Te...)</span>
-                <span class="method-start">44900 ms</span>
+                <span class="method-start">37548 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=SearchiPhoneX status=SUCCESS method=SearchiPhone.SearchiPhoneX()[pri:0, instance:Te...)</span>
-                <span class="method-start">46199 ms</span>
+                <span class="method-start">38423 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

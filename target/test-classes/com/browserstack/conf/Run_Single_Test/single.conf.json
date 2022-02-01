@@ -5,8 +5,8 @@
 
   "capabilities": {
     "project": "Selenium Test",
-    "build": "TestNGJava_Demo",
-    "name": "Single_Test",
+    "build": "Automate_Demo",
+    "name": "Single Test",
     "browserstack.debug": "true",
     "browserstack.networkLogs": "true",
     "browserstack.selenium_version": "3.14.0",
@@ -15,10 +15,9 @@
 
   "environments": {
     "env": {
-      "browser": "Edge",
-      "browser_version": "latest",
-      "os": "Windows",
-      "os_version": "11"
+      "os_version": "10.0",
+      "device": "Samsung Galaxy S20",
+      "realMobile": "true"
     }
   }
 }

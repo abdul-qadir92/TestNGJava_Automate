@@ -7,7 +7,7 @@
     <classes>
       <class name="TestCase.LocalTest">
         <methods>
-          <include name="launch"/>
+          <include name="init_driver"/>
           <include name="tearDown"/>
           <include name="test"/>
         </methods>

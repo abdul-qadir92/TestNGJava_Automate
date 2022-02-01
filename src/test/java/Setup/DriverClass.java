@@ -55,12 +55,10 @@ public class DriverClass {
                 capabilities.setCapability(pair.getKey().toString(), pair.getValue().toString());
             }
         }
-        System.out.println("BROWSERSTACK_BUILD_NAME: "+System.getenv("BROWSERSTACK_BUILD_NAME"));
         if(System.getenv("BROWSERSTACK_BUILD_NAME")!=null){
-            System.out.println("I am inside logic!");
             capabilities.setCapability("build", System.getenv("BROWSERSTACK_BUILD_NAME"));
         }
-        System.out.println("build name is: "+capabilities.getCapability("build"));
+
         String username = System.getenv("BROWSERSTACK_USERNAME");
         if (username == null) {
             username = (String) config.get("user");
@@ -69,6 +67,18 @@ public class DriverClass {
         String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
         if (accessKey == null) {
             accessKey = (String) config.get("key");
+        }
+
+        String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+        if(browserstackLocalIdentifier!=null){
+            capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+            System.out.println("browserstackLocalIdentifier: "+browserstackLocalIdentifier);
+        }
+
+        String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
+        if(browserstackLocalIdentifier!=null){
+            capabilities.setCapability("browserstack.local", browserstackLocal);
+            System.out.println("browserstackLocal: "+browserstackLocal);
         }
 
         if (capabilities.getCapability("browserstack.local") != null
