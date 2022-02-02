@@ -71,8 +71,8 @@ public class DriverClass {
 
         String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
         if(browserstackLocalIdentifier!=null){
-
-        }capabilities.setCapability("browserstack.localIdentifier", "Test-Azure-AQ123");
+            capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+        }
 
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
         if(browserstackLocalIdentifier!=null){
@@ -81,10 +81,10 @@ public class DriverClass {
         System.out.println(capabilities.toJson().toString());
         if (capabilities.getCapability("browserstack.local") != null
                 && capabilities.getCapability("browserstack.local") == "true") {
-            l = new Local();
+            /*l = new Local();
             Map<String, String> options = new HashMap<String, String>();
             options.put("key", accessKey);
-            l.start(options);
+            l.start(options);*/
         }
         //region optionalCapabilities
         if(capabilities.getCapability("realMobile")!=null
