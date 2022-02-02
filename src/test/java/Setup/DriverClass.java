@@ -81,10 +81,10 @@ public class DriverClass {
         System.out.println(capabilities.toString());
         if (capabilities.getCapability("browserstack.local") != null
                 && capabilities.getCapability("browserstack.local") == "true") {
-            l = new Local();
+            /*l = new Local();
             Map<String, String> options = new HashMap<String, String>();
             options.put("key", accessKey);
-            l.start(options);
+            l.start(options);*/
         }
 
         //region optionalCapabilities
