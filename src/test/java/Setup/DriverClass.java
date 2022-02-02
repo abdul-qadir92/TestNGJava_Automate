@@ -72,15 +72,13 @@ public class DriverClass {
         String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
         if(browserstackLocalIdentifier!=null){
             capabilities.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
-            System.out.println("browserstackLocalIdentifier: "+browserstackLocalIdentifier);
         }
 
         String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
         if(browserstackLocalIdentifier!=null){
             capabilities.setCapability("browserstack.local", browserstackLocal);
-            System.out.println("browserstackLocal: "+browserstackLocal);
         }
-
+        System.out.println(capabilities.toString());
         if (capabilities.getCapability("browserstack.local") != null
                 && capabilities.getCapability("browserstack.local") == "true") {
             l = new Local();

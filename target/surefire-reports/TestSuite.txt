@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 13.512 s <<< FAILURE! - in TestSuite
-TestCase.LocalTest.init_driver[Run_Local_Test/local.conf.json, env](0)  Time elapsed: 13.276 s  <<< FAILURE!
-org.openqa.selenium.WebDriverException: 
-Error: OS and OS Version not supported. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 1.41 seconds
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Abduls-MacBook-Pro.local', ip: 'fe80:0:0:0:10e8:4039:9f70:d84b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '1.8.0_311'
-Driver info: driver.version: RemoteWebDriver
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 44.52 s - in TestSuite
